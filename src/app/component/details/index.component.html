@@ -1,0 +1,61 @@
+<div class="container text-center border shadow p-3 mb-5 bg-white rounded" style="width: 500px;">
+	<div *ngIf="music$ | async as music" >
+	
+	<h2> {{music.title}} - {{music.length}}</h2><br>
+	<img src="assets/{{music.thumbnail}}" width="200"><br><br>
+		
+		<audio controls>
+		<source src="assets/{{music.audio}}" type="audio/mpeg" >
+		</audio><br><br>
+		<h3>Price - {{music.price}}$</h3><br>
+		<h5> {{music.desp}}</h5><br>
+
+	
+	
+<div> <a [routerLink]= "['/cart', {id:music.id}]" class="btn btn-info btn-lg" role="button">Add to Cart</a></div></div>
+<br>
+</div>
+
+<div class="text-right">
+	 <a [routerLink]= "['/musics']" class="btn btn-info btn-lg" role="button">Go Back</a>
+</div>
+<br>
+
+
+
+
+
+
+<!-- 
+<h1>Music Store</h1>
+<table border="1">
+	
+	<tr>
+		<th>Id</th>
+		<th>Title</th>
+		<th>Length</th>
+		<th>Lyrics</th>
+		<th>Price</th>
+		<th>Thumbnail</th>
+		<th>Audio</th>
+	</tr>
+ 	<tr *ngIf="music$ | async as music">
+		<td> {{music.id}}</td>
+		<td> {{music.title}}</td>
+		<td> {{music.length}}</td>
+		<td> {{music.desp}}</td>
+		<td> {{music.price}}</td>
+		<td>
+            <img src="assets/{{music.thumbnail}}" width="150">
+        </td>
+		<td> <audio controls >
+		<source src="assets/{{music.audio}}" type="audio/mpeg" >
+		</audio>
+		</td>
+		<td>
+		<a [routerLink]= "['/cart', {id:music.id}]" >Add to Cart</a>
+		</td>
+		<td><a [routerLink]= "['/musics']" class="btn btn-info btn-lg" role="button">Back</a></td>
+	</tr> 
+</table>
+ -->

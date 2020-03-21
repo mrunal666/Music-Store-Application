@@ -1,0 +1,13 @@
+<div id="search-component">
+  <h4><label for="search-box">Hero Search</label></h4>
+
+  <input #searchBox id="search-box" (input)="musicSearch(searchBox.value)" />
+
+  <ul class="search-result">
+    <li *ngFor="let music of musics$ | async" >
+      <a routerLink="/details/{{music.id}}">
+        {{music.name}}
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,21 @@
+<!-- <app-search></app-search> -->
+<div class="container-fluid" *ngFor="let music of musics" >
+<div class=" jumbotron">
+  <div class="row">
+  <div class="col-4">
+  <img src="assets/{{music.thumbnail}}" width="350" >
+  <p class="my-4">
+  <a [routerLink]= "['/details', {id:music.id}]" class="btn btn-info btn-lg" role="button">Show Details</a></p>
+  </div>
+  <div class="col-8">
+  <h1 class="display-4" style="font-weight: 400;">{{music.title}}</h1>
+  <p class="lead"><strong>Artists:</strong> {{music.length}}</p>
+  <p class="lead"><strong>Price ($):</strong> {{music.price}}</p>
+    <p class="lead"> {{music.desp}}</p>
+  	<hr class="my-4">
+  <p class="lead">
+    <a [routerLink]= "['/cart', {id:music.id}]" class="btn btn-info btn-lg" role="button">Add to Cart</a>
+  </p>
+  </div></div>
+</div>
+</div>

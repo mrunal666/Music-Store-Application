@@ -1,0 +1,36 @@
+
+  <div class="container">
+  <div class="title">
+    Your Cart
+  </div>
+  <div class="jumbotron"  *ngFor="let item of items">
+  <div class="item col-sm"   >
+    <div class="buttons">
+       <a class="btn btn-primary btn-lg" (click)="remove(item.music.id)" style="color:white;font-weight: bold;" >X</a>
+    </div>
+    <div class="image col-sm">
+       <img src="assets/{{item.music.thumbnail}}" width="150">
+    </div>
+ 
+    <div class="description col-sm">
+    <h4>Title</h4>
+      <span>{{item.music.title}}</span><br>
+      <h4>Price</h4>
+      <span>{{item.music.price}}</span>
+
+    </div>
+    <div class="col-sm">
+    <h4>Quantity</h4>
+      <label>{{item.Quantity}}</label>
+    </div>
+    <div class="total-price col-sm">{{item.music.price * item.Quantity}}</div>
+    
+  </div>
+
+</div>
+<div class="text-left" >
+	 <a [routerLink]= "['/musics']" class="btn btn-info btn-lg" role="button">Shop More</a>
+</div>
+<div class="text-right" style="font-size: 25px;">
+  <label><strong>Total:</strong>  {{total}}</label></div>
+</div>
